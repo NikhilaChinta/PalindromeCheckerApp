@@ -1,28 +1,45 @@
 import java.util.Scanner;
 
+/**
+ * MAIN CLASS - UseCase4PalindromeCheckerApp
+ * Use Case 4: Character Array Based Validation
+ */
+
 public class PalindromeCheckerApp {
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter a string: ");
-        String input = scanner.nextLine();
+        String input = sc.nextLine();
 
-        String reversed = "";
+        // Convert string to character array
+        char[] characters = input.toCharArray();
 
-        // Reverse the string
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed = reversed + input.charAt(i);
+        int start = 0;
+        int end = characters.length - 1;
+        boolean isPalindrome = true;
+
+        // Two-pointer comparison
+        while (start < end) {
+
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+
+            start++;
+            end--;
         }
 
-        // Compare original and reversed
-        if (input.equals(reversed)) {
-            System.out.println("It is a Palindrome.");
+        // Display result
+        if (isPalindrome) {
+            System.out.println("It is a Palindrome");
         } else {
-            System.out.println("It is NOT a Palindrome.");
+            System.out.println("Not a Palindrome");
         }
 
-        scanner.close();
+        sc.close();
     }
 }
