@@ -1,28 +1,24 @@
-import java.util.Scanner;
-
 public class Main {
 
     public static void main(String[] args) {
+        String word = "radar";
+        char[] characters = word.toCharArray();
+        int start = 0;
+        int end = characters.length - 1;
 
-        Scanner sc = new Scanner(System.in);
-
-        System.out.print("Enter a string: ");
-        String input = sc.nextLine();
-
-        String reversed = "";
-
-        // Reverse the string
-        for (int i = input.length() - 1; i >= 0; i--) {
-            reversed = reversed + input.charAt(i);
+        boolean isPalindrome = true;
+        while (start < end) {
+            if (characters[start] != characters[end]) {
+                isPalindrome = false;
+                break;
+            }
+            start++;
+            end--;
         }
-
-        // Check palindrome
-        if (input.equals(reversed)) {
-            System.out.println("Palindrome");
+        if (isPalindrome) {
+            System.out.println(word + " is a palindrome.");
         } else {
-            System.out.println("Not Palindrome");
+            System.out.println(word + " is not a palindrome.");
         }
-
-        sc.close();
     }
 }
