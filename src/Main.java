@@ -35,9 +35,22 @@ public class Main {
                 break;
             }
         }
-
         // Output the result
         System.out.println("Input: " + input);
         System.out.println("Is Palindrome?: " + isPalindrome);
+
+        // Capture end time
+        long endTime = System.nanoTime();
+
+        // Calculate total execution duration
+        long executionTime = endTime - startTime;
+
+        // Display results
+        System.out.println("Is Palindrome? : " + isPalindrome);
+        System.out.println("Execution Time : " + executionTime + " ns");
+        System.out.println("-------------------------------");
+
+        scanner.close();
+
     }
 }
