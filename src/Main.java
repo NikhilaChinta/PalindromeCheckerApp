@@ -60,6 +60,7 @@ public class Main {
         // Display results
         System.out.println("Is Palindrome? : " + isPalindrome);
         System.out.println("Execution Time : " + executionTime + " ns");
+        System.out.println("-------------------------------");
 
         scanner.close();
     }
